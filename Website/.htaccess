@@ -1,0 +1,18 @@
+#addhandler x-httpd-php-cgi .php4
+#addhandler x-httpd-php5-cgi .php5
+#addhandler x-httpd-php5-cgi .php
+
+#Fix Rewrite
+Options -Multiviews
+
+RewriteEngine on
+
+#rewrite only if physical file request
+#keeps styles.css from turning into styles.php
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d 
+
+#rewrite all requests, dropping file extensions
+RewriteRule ^([a-zA-Z0-9_-]+) $1\.php
+

@@ -1,0 +1,380 @@
+
+<html>
+<head>
+<style type="text/css">
+	body{
+		background-color:#222;
+		margin:0px;
+		padding:0px;
+	}
+	#doc{
+		width:50%;
+		min-width:500px;
+		height:auto;
+		display:block;
+		background-color:#FFF;
+		margin:0px;
+		padding:15px;
+		color:#222;
+		font-family:times;
+	}
+	pre{
+		width:auto;
+		height:auto;
+		display:block;
+		background:#EEE;
+		margin:10px 0px;
+		padding:0px;
+		clear:both;
+		color:#333;
+	}
+	code{
+		height:inherit;
+		width:auto;
+		display:block;
+		margin:0px;
+		padding:0px;
+		border-left:solid 5px #AAA;
+	}
+	p{
+		color:#333;
+		font-size:17px;
+		line-height:28px;
+		padding-left:50px;
+	}
+	h1,h2,h3,h4{
+		font-family:consolas,times;
+	}
+	h4{
+		padding-left:50px; margin:0px;
+	}
+	a{
+		font-size:17px;
+		letter-spacing:.05em;
+		color:#004EFF;
+		margin-bottom:5px;
+		padding:5px;
+	}
+	a:hover{
+		text-decoration:none;
+	}
+	.top{
+		width:18px;
+		height:30px;
+		display:inline-block;
+		margin-top:20px;
+		border-bottom:solid 2px #EEE;
+		padding-bottom:5px;
+	}
+	.top a{
+		width:18px;
+		height:30px;
+		display:block;
+		float:left;
+		background: url(top.png) no-repeat left center;
+	}
+</style>
+</head>
+<body>
+<div id="doc">
+<h3>PureTween Documentation by Charlesn v1.0</h3>
+
+<hr />
+
+<h2>PureTween</h2>			
+Created By: Charlesn <br /><br />
+<span>
+	Thank you for purchasing my theme. If you have further inquiries beyond the scope of this document, please find and utilize the support forum and theme comments section  at <a href="http://themeforest.net" target="_blank">ThemeForest</a>, to their fullest extent.
+</span>
+<hr /> 
+
+<h2>Table of Contents</h2>
+
+1.	<a href="#gettingstarted">Getting Started</a> <br />
+2.	<a href="#html">HTML Structure</a> <br />
+3.	<a href="#css">CSS Structure</a> <br />
+4.	<a href="#javascript">Javascript</a> <br />
+5.	<a href="#psd">PSDs And Other Assets</a> <br />
+6.	<a href="#phpcode">PHP Code Usage</a> <br />
+7.	<a href="#seo">SEO</a> <br />
+8.	<a href="#instructions">How To's</a> <br />
+9.	<a href="#credits">Credits</a> <br />
+<br />
+<hr />
+<!-- ---------------------------------------------------------------------------- -->
+<!-- ============================================================================ -->
+
+<h3 id="gettingstarted">1 :: Getting Started <span class="top"><a href="#doc"></a></span></h3>
+<p>
+	In this document, you'll find a detailed guide for getting, installing, and using the PureTween design and portfolio template.
+</p>
+<p>	
+	PureTween is a clean, simple and elegant jQuery and php driven template that is very easy to navigate and features animated tile based links on the main page. 
+	It supports an unlimited number of tiles with unlimited color options. They can be linked to other pages on the site or used to display plain text or just images.
+</p>
+<p>	
+	After purchasing the template, unpack and place the files and directories at the top level of your website, your installation is complete. The template comes with an index.php file which acts not only as a default
+	page but as a shell, pulling in other pages of the site using ajax, as they are requested. The template supports an unlimited number of pages, which are required to be php files, and animates the page into this 
+	"shell" when requested. 
+</p>
+<p>
+	The following are some important pages of the template worth pointing out:
+</p>
+<h4>Index.php</h4>
+<p>
+	"Index.php" at the root level of the template's directory structure is the base of the entire template and all of its content. It simply fetches and renders "header.php" and "footer.php". <br /><br /> Without a url hash 
+	in the browser bar, "index.php" displays default content located inside "home.php".
+</p>
+<h4>Home.php</h4>
+<p>
+	"Home.php" contains the home page content for the template which consists of animated tile based links. Each tile is made up of an html "span" element with 2 additionally nested elements, "p" and another "span". See
+	<a href="#instructions">instructions</a>on how to add additional tiles.
+</p>
+<h4>Web Fonts</h4>
+<p>
+	The following fonts made available by Google Web Fonts are utilized in this template:
+	<br/> 
+	1. Dosis (400, 500, 600, 700) <br />
+	2. Rancho (400) <br />
+	3. Quantico (400, 700) <br />
+</p>
+<h4>The Documentation</h4>
+<p>
+	To access this document quickly and easily from your site prior to deploying to production, ensure that the variable "enableF1_docs" is set to true inside "scripts/customize.js". If true, you can simply press the F1 button
+	while viewing your site to pull up the documentation. Be sure to disable "enableF1_docs" prior to deploying your site to production for obvious reasons.
+</p>
+<hr />
+<!-- ---------------------------------------------------------------------------- -->
+<!-- ============================================================================ -->
+
+<h3 id="html">2 :: HTML Structure <span class="top"><a href="#doc"></a></span></h3>
+<p>
+	This template has a fixed layout. At the top level are two div elements with id's of "wrapper" and "footer" respectively. The wrapper element encapsulates
+	all main content on all pages of the template, while the footer element houses a fixed width 3 column 1 row grid. 
+	
+	<h4>A. WRAPPER</h4>
+	<p>
+	The wrapper element, on all pages of this template, contains a base div element with id "content". The "#content" div is declared at the bottom of 
+	"includes/header.php". Since "header.php" is a wrapper for all pages of the template, this setup allows you to have nothing more than raw html markup 
+	in all other pages of your site that are linked to via the navigation menu. For example, you can have a page called "services.php" with nothing more 
+	than the following inside.
+	<pre>
+		<code>
+	<span><</span>span id="page-title">Our Services<span><</span>/span>
+	<span><</span>span id="page-content"> A simple paragraph describing what we have to offer.<span><</span>/span>
+		</code>
+	</pre>
+	</p>
+	
+	<h4>B. FOOTER</h4>
+	<p>
+	Default content contained inside the footerconsist of a "latest projects" section, a custom built twitter feed widget, and footer contact info section. 
+	This content is found and can be modified within "/includes/footer.php".
+	</p>
+</p>
+
+<hr /> 
+<!-- ---------------------------------------------------------------------------- -->
+<!-- ============================================================================ -->
+
+<h3 id="css">3 :: CSS Structure <span class="top"><a href="#doc"></a></span></h3>
+<p>
+	Styling for this template is contained within a single well organized CSS document located at "css/styles.css". At the top of this file is a CSS reset 
+	rule whose goal is to establish a standard for the way html by default is rendered in different browsers. 
+</p>
+<p>
+	Following the reset rule are a few general rules that include a number of multi-use class style definitions. Below these general purpose classes are the 
+	style rules specific to shaping the look and feel of the template. To edit or adjust the look of any element, find it's class name or id within these rules
+	and adjust or add to it's list of attributes.
+</p>
+<p>
+	Styles within "style.css" are defined in the following manner and are indented accordingly to represent a nested element.
+	<pre>
+		<code>
+	/* === #CONTENT DIV === */
+	#content
+	{
+		width:1000px; 
+		height:auto; 
+		padding-bottom:5px;
+	}
+	
+		#child-element-of-content
+		{
+			width:1000px; 
+			height:50px; 
+			padding:0px;
+		}
+		</code>
+	</pre>
+</p>
+
+<hr /> 
+<!-- ---------------------------------------------------------------------------- -->
+<!-- ============================================================================ -->
+
+<h3 id="javascript">4 :: Javascript <span class="top"><a href="#doc"></a></span></h3>
+<p>
+	Javascript, in the form of raw javascript and also in jQuery form, is used extensively within this template with scripts centrally located in the "scripts/.." directory at the 
+	top level of the directory structure. Within this directory are two additional directories that hold downloaded scripts associated with:<br /><br />
+	1. The jQuery library (v1.7.1) <br />
+	2. jQueryUI effects only extension (v1.8.20) <br />
+	3. prettyPhoto lightbox viewer (v3.1.4) <br /><br />
+	PrettyPhoto is a modal lightbox style jquery based content and media viewer. <br />
+</p>
+<p>
+	<h4>Customizing</h4>
+</p>
+<p>
+	Javascript used to control the template is also located in "scripts/main.js" and in "scripts/customize.js". The latter is a much more user friendly file that you can open and any 
+	file editor and have the ability to customize basic template functionality. If you possess javascript knowledge and would like advanced customization, feel free to edit the code found in "main.js".
+</p>
+<hr /> 
+<!-- ---------------------------------------------------------------------------- -->
+<!-- ============================================================================ -->
+
+<h3 id="psd">5 :: PSDs And Other Assets <span class="top"><a href="#doc"></a></span></h3>
+<p>
+	The "images/.." top level directory contains all image components used across the template. These assets are grouped and separated via subdirectories within this folder. The structure
+	is as follows:
+	
+	<pre>
+		<code>
+	images/
+		buttons/
+			button1.png
+			...
+		icons/
+			icon1.png
+			...
+		prettyPhoto/
+			theme1/
+			theme2/
+			...
+		PSD/
+			component.psd
+			...
+		stock_assets/
+			stock1.jpg
+			...
+		
+		image1.png
+		image2.png
+		...
+		</code>
+	</pre>
+</p>
+
+<hr /> 
+<!-- ---------------------------------------------------------------------------- -->
+<!-- ============================================================================ -->
+
+<h3 id="phpcode">6 :: PHP Code Usage <span class="top"><a href="#doc"></a></span></h3>
+<p>
+	This template, although javascript driven, is powered by the PHP scripting language. The header (logo and everything above) and the footer (twitter widget and surrounding content) are nothing more than dynamic php files located inside
+	the "includes/..." directory. Using php, these two files are called or "included" into index.php where the html within them are rendered. Additionally, content pages for the template are required to be .php files to help encorage and 
+	facilitate the addition of more dynamically, possibly server side, generated content. For static content, simply place the static html markup in the your php file as it were an html file.
+</p>
+<p>
+	PHP code is also used to handle delivery of the contact form included in this template. The script is located in "actions/act_sendContact.php" and is a basic skeletion for you to defined how you wish the handle the form details on the 
+	server after is it validated and sent.
+</p>
+
+<hr /> 
+<!-- ---------------------------------------------------------------------------- -->
+<!-- ============================================================================ -->
+
+<h3 id="seo">7 :: SEO <span class="top"><a href="#doc"></a></span></h3>
+<p>
+	For the purposes of optimizing this template for Google and other search engines, robust use of url hashes is made in order to enable support for the template and its pages to be crawled and indexed by search engine crawlers.
+	The navigation links to other pages of the template using nothing more than a hash fragment corresponding to the "link to" page's file name. For example:
+	<pre>
+	<code>
+      <span><</span><span>a</span><span> href="#!mypage" rel="canonical">My Page</span><span><</span><span>/a</span><span>></span>  
+	</code>
+	</pre>
+</p>	
+<p>
+	The above is a typical link found in the navigation bar for the template. Rather than saying [href="mypage.php"], we use a hash fragment with the name of the intended file. This tells search engines that not only is
+	this is an ajax application but it also instructs them to index the content found at the fragmented url (www.sitename.com/#!mypage).
+</p>
+
+<hr />
+<!-- ---------------------------------------------------------------------------- -->
+<!-- ============================================================================ -->
+
+<h3 id="instructions">8 :: How To Instructions <span class="top"><a href="#doc"></a></span></h3>
+<p>
+	<h4>1. To add a new tile to the template home page:</h4>
+</p>
+<p>	
+	Place the following code at the end of "home.php" with the file you want to link to as the "id" attribute of the wrapper "span" element. Omit "id" and add "not-clickable" as an additional class attribute to this element  
+	if you do not wish the present the tile as a link. Edit "TILE DISPLAY LABEL" with the text you want as the tile label (...or title). Similarly edit "TILE DISPLAY SUB LABEL" with the sub label you wish to appear.
+</p>
+<pre>
+	<code>
+	<span><</span>span class="center-tile" id="file_name_to_fetch"<span>></span>
+		
+	<span><</span>p>
+	<span><</span>span class="tilelabel"<span>></span> <span><</span>span class="label-text"<span>></span>TILE DISPLAY LABEL<span><</span>/span><span><</span>/span>
+	<span><</span>/p>
+	<span><</span>span class="tile-sub-text-2">TILE DISPLAY SUB LABEL<span><</span>/span>
+	
+	<span><</span>/span<span>></span>
+	</code>
+</pre>
+<p>
+	Then, add the following to the page.tilePageColorMap object in "script/customize.js". With tile color and file name properties.
+</p>
+<pre>
+	<code>
+	,
+	{
+		color:	"#B41F24",
+		page:	"page_4",
+		image: 	""
+	}
+	</code>
+</pre>
+
+<p>
+	<h4>2. To add a new page to the site:</h4>
+</p>
+<p>
+	Simply copy an existing page and rename it. Then, to add a link to get to the page in the navigation menu, open "header.php" and add an anchor tag to the existing collection located inside the div element with id "_menu".
+	The "href" attribute of the anchor tag should contain the (renamed) file to point to. To add a new tile to be linked to the new page, follow the steps documented above.
+</p>
+
+<p>
+	<h4>2. To edit background colors and images:</h4>
+</p>
+<p>
+	Open "scripts/customize.js" where there are definitions for both background colors and images for tiles, the footer, and the entire template. I have predefined 7 background image locations as variables that you can simply plugin
+	where you wish to have the image as a repeating background (page, footer ... etc). Feel free to defined more backgrounds as you insert the associated image inside "images/backgrounds" directory. You leave either image or color empty and keep in mind that images will
+	always overlay a background color definition.
+</p>
+<hr /> 
+<!-- ---------------------------------------------------------------------------- -->
+<!-- ============================================================================ -->
+
+<h3 id="credits">9 :: Credits <span class="top"><a href="#doc"></a></span></h3>
+<p>
+	1. Paul Bica @ FLICKR Creative Commons. (Portfolio page images 9 & 10) <br />
+	2. Kevin Dooley @ FLICKR Creative Commons. (Kyrene school bus image, Music vs Photography lights image, Angles lines lights and shadows scottsdale image, Dicken's village holiday image) <br/>
+	3. Jenny Downing @ FLICKR Creative Commons. (Snowbow snow mountain image) <br />
+	4. Tambako the Jaguar @ FLICKR Creative Commons. (Hotel over the lake image) <br />
+	5. Linh Ngan @ FLICKR Creative Commons. (Ant Army image) <br />
+</p>
+<hr />
+<!-- ---------------------------------------------------------------------------- -->
+<!-- ============================================================================ -->
+
+<br />
+<br />
+
+pureTween Template Documentation.<br/>
+By Charlesn Themes.
+
+</div>
+</body>
+</html>
